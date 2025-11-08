@@ -19,4 +19,4 @@ I am interested in:
 Hopefully opportunity will come and I will grasp it. But for now, I am a devoted student and welcome to connect to schoolmates and enthusiasts. I will publish my study materials for general IT courses and self-learning on GitHub monthly for now.
 
 ---
-I am also a man of culture. My bias is Aki Hayasaki from Chainsaw Man. Hopefully my life won't just be as tragic -_-.
+I am also a man of culture. My bias is Aki Hayasaki from Chainsaw Man. Hopefully my life will not become as tragic -_-.
