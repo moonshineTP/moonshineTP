@@ -7,7 +7,7 @@ I'm **Hung Pham**, a nonchalant coder with no significant coding achievements as
 I have solid and deep knowledge in:
 - Olympiad/Undergrad Mathematics
 - Applied Algorithm, Data Structures and Databases.
-- Optimization and Operations Research
+- Combinatorial Optimization and Operations Research
 - Data Science, Artificial Intelligence and Machine Learning.
 
 These skills strongly reinforce and refine the ability to make data-driven decisions.
@@ -16,9 +16,9 @@ I am interested in:
 - Inference, Machine Learning, AutoML, Reinforcement Learning, Continual Learning, and Recommendation Systems
 - Big data, data processing systems, and streaming data processing
 - Operations research and logistics
-- High performance computing and/or Cryptography (likely able to adapt fast)
+- High performance computing and/or Cryptography (not much exp but likely able to adapt fast)
 
-Hopefully opportunities will come and I will be able to grasp it. But for now, I am a devoted student and welcome to connect to schoolmates and enthusiasts of Vietnam or any institutes around the world. I will publish my study materials for general IT courses and self-learning on GitHub monthly for now, bonus some source code for onschool projects. 
+Hopefully opportunities will come and I will be able to grasp it. But for now, I am fully devoting to studying and it should be a blessing if I have more chances to connect to schoolmates and enthusiasts of Vietnam or any institutes around the world. I will publish my study materials for general IT courses and self-learning on GitHub monthly for now, bonus some source code for onschool projects. 
 
 ---
 I am also a man of culture, a cat lover and a theater kid. My bias is _Aki Hayasaki_ from **Chainsaw Man**. Hopefully my life will not become as tragic -_-.
