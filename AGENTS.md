@@ -38,3 +38,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 - The GitHub Pages workflow sets `GITHUB_PAGES=true`, which enables Next.js static export with trailing slashes and unoptimized local images. The default build remains the Cloudflare Workers build.
 - GitHub Pages deploys the `out/` artifact from the tested `main` commit through the Actions deployment source. DNS records and any custom domain configuration remain outside the repository.
+
+## Cloudflare Pages deployment
+
+- Use Cloudflare Pages for the static Next.js export. The Pages build command is `bun run build` and the output directory is `out/`.
+- Cloudflare Pages sets `CF_PAGES=1`; `next.config.ts` uses that flag to enable static export. The GitHub Pages workflow continues to use `GITHUB_PAGES=true`.
+- Keep the Cloudflare Workers/OpenNext workflow separate. Use Workers when the app requires server-side Next.js behavior.

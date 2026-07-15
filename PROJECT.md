@@ -41,6 +41,20 @@ Run `bun run cf-typegen` after adding Wrangler bindings to regenerate the Cloudf
 
 GitHub Actions also publishes a static export to GitHub Pages after the `main` quality gate passes. Enable GitHub Actions as the Pages source in repository settings. The Cloudflare workflow requires `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets.
 
+### Cloudflare Pages form
+
+For the Cloudflare Pages Git integration, use:
+
+| Field | Value |
+| --- | --- |
+| Framework preset | `Next.js (Static HTML Export)`; use `Next.js` if this preset is unavailable |
+| Build command | `bun run build` |
+| Build output directory | `out` |
+| Root directory | `/` |
+| Production branch | `main` |
+
+Do not use the legacy `@cloudflare/next-on-pages` command or `.vercel/output/static`. Those values belong to the older Pages adapter path. The Workers deployment remains available separately through `bun run deploy`.
+
 The root `AGENTS.md` points coding agents to the version-matched Next.js documentation bundled in `node_modules/next/dist/docs/`.
 
 ## Getting Started

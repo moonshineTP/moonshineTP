@@ -1,11 +1,12 @@
 import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
-const isGithubPages = process.env.GITHUB_PAGES === "true";
+const isStaticExport =
+  process.env.GITHUB_PAGES === "true" || process.env.CF_PAGES === "1";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  ...(isGithubPages && {
+  ...(isStaticExport && {
     output: "export",
     trailingSlash: true,
     images: {
