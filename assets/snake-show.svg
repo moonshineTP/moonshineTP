@@ -150,6 +150,6 @@
     </g>
   </g>
 
-  <path d="M0 282 L47 272 L91 231" fill="none" stroke="#b6c894" stroke-opacity=".56" stroke-width="2"/>
+  <path d="M0 282 L47 272 L91 231 L126 181 L171 136 L219 108 L270 96" fill="none" stroke="#b6c894" stroke-opacity=".56" stroke-width="2" stroke-linejoin="round"/>
   <rect x="1" y="1" width="958" height="358" rx="17" fill="none" stroke="#a9bac1" stroke-opacity=".3"/>
 </svg>
