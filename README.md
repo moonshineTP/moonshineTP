@@ -2,10 +2,6 @@
 # Blessful enough
 ---
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=18&duration=3500&pause=1000&color=8CDBC0&center=true&vCenter=true&width=820&lines=Mathematics%2C+computation%2C+decision-making.;Learning+with+intent." alt="Mathematics, computation, decision-making. Learning with intent." />
-</p>
-
 <img src="./assets/snake-show.svg" width="100%" alt="An animated snake agent explores a mapped hill." />
 
 I'm **Hung Pham**, a nonchalant CS student with no significant coding achievements and no notable projects. I'm more invested in Mathematics. I'm 20 now and currently a third year student of HUST. The last two years of university have been packed with knowledge and buried in deadlines, as it feels like I’ve suffered for an entire decade. My head was for long a mess of parallelized thoughts and emotion chaos, and I am on the way to heal myself. For now, I'm full of positivity. I am assured that my vision are wide enough, so I will head down the mountain to seek an internship. My ambition is to become a competent **decision-maker**, or at least able to support other's decision-making process.
