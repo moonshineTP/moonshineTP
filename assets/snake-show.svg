@@ -73,7 +73,11 @@
   </g>
 
   <g aria-hidden="true">
-    <path d="M335 181 L354 132 L367 116 L378 177Z" fill="#77877d"/><path d="M354 132 L367 116 L364 174 L348 191Z" fill="#aab3a8"/><path d="M704 166 L728 112 L746 147 L758 178Z" fill="#6f8178"/><path d="M728 112 L746 147 L733 176 L717 177Z" fill="#a6b0a4"/><path d="M791 183 L815 151 L831 199Z" fill="#73857a"/><path d="M815 151 L831 199 L810 192Z" fill="#a7b2a7"/>
+    <path d="M335 181 L354 132 L367 116 L378 177Z" fill="#77877d"/><path d="M354 132 L367 116 L364 174 L348 191Z" fill="#aab3a8"/>
+    <g transform="translate(-30 0)">
+      <path d="M704 166 L728 112 L746 147 L758 178Z" fill="#6f8178"/><path d="M728 112 L746 147 L733 176 L717 177Z" fill="#a6b0a4"/>
+      <path d="M791 183 L815 151 L831 199Z" fill="#73857a"/><path d="M815 151 L831 199 L810 192Z" fill="#a7b2a7"/>
+    </g>
   </g>
 
   <g clip-path="url(#hillClip)" aria-hidden="true">
