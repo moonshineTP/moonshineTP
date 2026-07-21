@@ -77,9 +77,7 @@
     <g transform="translate(-118 -45)">
       <path d="M704 166 L728 112 L746 147 L758 178Z" fill="#6f8178"/><path d="M728 112 L746 147 L733 176 L717 177Z" fill="#a6b0a4"/>
     </g>
-    <g transform="translate(-115 -48)">
-      <path d="M791 183 L815 151 L831 199Z" fill="#73857a"/><path d="M815 151 L831 199 L810 192Z" fill="#a7b2a7"/>
-    </g>
+    <path d="M654 134 L670 109 L686 148Z" fill="#73857a"/><path d="M670 109 L686 148 L668 140Z" fill="#a7b2a7"/>
   </g>
 
   <g clip-path="url(#hillClip)" aria-hidden="true">
