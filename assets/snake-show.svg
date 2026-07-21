@@ -144,12 +144,12 @@
     <path d="M752 360 C770 323 784 273 804 224 L824 184 L840 210 L817 294 L778 348Z" fill="#91a098" opacity=".82"/>
     <path d="M840 210 L864 166 L882 203 L858 294 L817 294Z" fill="#6e817a"/>
     <path d="M882 203 L902 190 L917 231 L939 245 L960 253 V360 L930 302 L858 294Z" fill="#3b504a"/>
-    <path d="M804 224 L824 184 L840 210 L864 166 L882 203 L902 190 L917 231 L939 245 L960 253" fill="none" stroke="#b7c1b8" stroke-opacity=".7" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M752 360 C770 323 784 273 804 224 L824 184 L840 210 L864 166 L882 203 L902 190 L917 231 L939 245 L960 253" fill="none" stroke="#b7c1b8" stroke-opacity=".7" stroke-width="2" stroke-linejoin="round"/>
     <g fill="none" stroke="#d0d7d0" stroke-opacity=".3" stroke-width="1.4" stroke-linecap="round">
       <path d="M824 201 L814 239 L822 260 M864 185 L854 224 L860 247 M902 207 L894 240 L907 262"/>
     </g>
   </g>
 
-  <path d="M0 282 L47 272 L91 231 L126 181 L171 136 L219 108 L270 96" fill="none" stroke="#b6c894" stroke-opacity=".56" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M0 282 L47 272 L91 231" fill="none" stroke="#b6c894" stroke-opacity=".56" stroke-width="2"/>
   <rect x="1" y="1" width="958" height="358" rx="17" fill="none" stroke="#a9bac1" stroke-opacity=".3"/>
 </svg>
