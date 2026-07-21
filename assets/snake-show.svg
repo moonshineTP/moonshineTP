@@ -69,8 +69,7 @@
     <path d="M270 96 L315 109 L386 171 L432 187 L394 219 L344 184 L307 139Z" fill="#435e46" opacity=".64"/>
     <path d="M477 173 L566 116 L610 107 L575 154 L525 190 L481 224 L432 239Z" fill="#819b66" opacity=".5"/>
     <path d="M610 107 L653 122 L732 166 L780 177 L740 219 L687 198 L652 161Z" fill="#425b46" opacity=".66"/>
-    <path d="M65 286 C182 252 238 220 348 226 C459 233 539 191 651 190 C760 189 841 233 947 279" fill="none" stroke="#b2c48e" stroke-opacity=".23" stroke-width="1.4"/>
-    <path d="M44 319 C158 283 267 263 368 272 C480 282 592 228 704 233 C801 237 875 273 956 304" fill="none" stroke="#20392f" stroke-opacity=".42" stroke-width="1.5"/>
+    <path d="M0 319 C129 286 253 265 368 272 C480 282 592 228 704 233 C801 237 875 273 960 304 V360 H0Z" fill="#355342" opacity=".3"/>
   </g>
 
   <g aria-hidden="true">
@@ -137,11 +136,15 @@
     </g>
   </g>
 
-  <g clip-path="url(#hillClip)" aria-hidden="true">
-    <path d="M760 360 C780 315 792 255 808 222 C837 211 864 222 890 243 C915 262 938 269 960 272 V360Z" fill="#405945"/>
-    <path d="M784 342 C795 292 801 246 808 222 C836 215 855 226 874 242 L842 294Z" fill="#55704f" opacity=".72"/>
-    <path d="M808 222 C837 211 864 222 890 243 C915 262 938 269 960 272" fill="none" stroke="#7f9867" stroke-opacity=".58" stroke-width="1.8"/>
-    <path d="M860 269 l-3 -10 m4 9 l5 -12 m-1 13 l8 -8 M920 285 l-2 -8 m3 8 l5 -10 m-1 11 l7 -7" fill="none" stroke="#9fbd72" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+  <g aria-hidden="true">
+    <path d="M752 360 C770 323 784 273 804 224 L824 184 L840 210 L864 166 L882 203 L902 190 L917 231 L939 245 L960 253 V360Z" fill="#52665f"/>
+    <path d="M752 360 C770 323 784 273 804 224 L824 184 L840 210 L817 294 L778 348Z" fill="#91a098" opacity=".82"/>
+    <path d="M840 210 L864 166 L882 203 L858 294 L817 294Z" fill="#6e817a"/>
+    <path d="M882 203 L902 190 L917 231 L939 245 L960 253 V360 L930 302 L858 294Z" fill="#3b504a"/>
+    <path d="M804 224 L824 184 L840 210 L864 166 L882 203 L902 190 L917 231 L939 245 L960 253" fill="none" stroke="#b7c1b8" stroke-opacity=".7" stroke-width="2" stroke-linejoin="round"/>
+    <g fill="none" stroke="#d0d7d0" stroke-opacity=".3" stroke-width="1.4" stroke-linecap="round">
+      <path d="M824 201 L814 239 L822 260 M864 185 L854 224 L860 247 M902 207 L894 240 L907 262"/>
+    </g>
   </g>
 
   <path d="M0 282 L47 272 L91 231" fill="none" stroke="#b6c894" stroke-opacity=".56" stroke-width="2"/>
