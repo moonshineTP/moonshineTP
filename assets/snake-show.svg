@@ -1,27 +1,105 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 360" role="img" aria-labelledby="title description">
-  <title id="title">A snake agent crosses a mapped hill</title>
-  <desc id="description">An animated snake explores a wireframe terrain, avoiding ponds and moving toward apples.</desc>
+  <title id="title">A snake agent emerges onto a steep hill</title>
+  <desc id="description">A bright snake crawls from behind the left edge of a steep hill under a sparse star field, sensing luminous ponds and apples.</desc>
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101826"/><stop offset="1" stop-color="#172132"/></linearGradient>
-    <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#203b45"/><stop offset="1" stop-color="#13242e"/></linearGradient>
-    <radialGradient id="field"><stop offset="0" stop-color="#74e0b1" stop-opacity=".16"/><stop offset=".66" stop-color="#74e0b1" stop-opacity=".045"/><stop offset="1" stop-color="#74e0b1" stop-opacity="0"/></radialGradient>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <path id="route" d="M132 246 C232 281 284 225 386 211 S548 277 660 208 S741 130 820 118" fill="none"/>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101827"/>
+      <stop offset=".58" stop-color="#1a2938"/>
+      <stop offset="1" stop-color="#33464c"/>
+    </linearGradient>
+    <radialGradient id="nightLight" cx="78%" cy="8%" r="70%">
+      <stop offset="0" stop-color="#8ca5b4" stop-opacity=".2"/>
+      <stop offset=".55" stop-color="#415464" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#101827" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hill" x1=".18" y1="0" x2=".72" y2="1">
+      <stop offset="0" stop-color="#879f68"/>
+      <stop offset=".48" stop-color="#617c55"/>
+      <stop offset="1" stop-color="#344c3e"/>
+    </linearGradient>
+    <linearGradient id="snake" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#65d69c"/>
+      <stop offset="1" stop-color="#d8ff8f"/>
+    </linearGradient>
+    <radialGradient id="senseField">
+      <stop offset="0" stop-color="#c9ff94" stop-opacity=".19"/>
+      <stop offset=".7" stop-color="#8dffc0" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#8dffc0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pond" cx="50%" cy="36%" r="70%">
+      <stop offset="0" stop-color="#b9f7ff"/>
+      <stop offset=".5" stop-color="#45d7f0"/>
+      <stop offset="1" stop-color="#14799e"/>
+    </radialGradient>
+    <filter id="objectGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="starGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+    <path id="hillShape" d="M0 282 L47 272 L91 231 L126 181 L171 136 L219 108 L270 96 L315 109 L353 137 L386 171 L432 187 L477 173 L523 143 L566 116 L610 107 L653 122 L692 151 L732 166 L780 177 L829 202 L884 244 L928 268 L960 275 V360 H0Z"/>
+    <clipPath id="hillClip"><use href="#hillShape" xlink:href="#hillShape"/></clipPath>
+    <path id="route" d="M44 279 C76 276 88 251 111 240 C162 216 210 239 264 218 C332 187 403 225 478 210 C548 196 605 151 680 169 C751 186 808 226 873 211 C916 201 945 177 1008 169" fill="none"/>
     <style>
-      .terrain-line{fill:none;stroke:#56717a;stroke-opacity:.43;stroke-width:1}.contour{fill:none;stroke:#6a8d8b;stroke-opacity:.36;stroke-width:1.25}.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.5s ease-in-out infinite}.scan{stroke-dasharray:12 15;animation:scan 7s linear infinite}.apple{transform-box:fill-box;transform-origin:center;animation:apple 2.2s ease-in-out infinite}.apple.two{animation-delay:-.7s}.apple.three{animation-delay:-1.4s}@keyframes scan{to{stroke-dashoffset:-216}}@keyframes pulse{50%{opacity:.56;transform:scale(1.07)}}@keyframes apple{50%{transform:translateY(-5px) scale(1.07)}}@media (prefers-reduced-motion:reduce){.pulse,.scan,.apple{animation:none}}
+      .apple{transform-box:fill-box;transform-origin:center;animation:apple 2.6s ease-in-out infinite}.apple.two{animation-delay:-.8s}.apple.three{animation-delay:-1.6s}.pond-scan{stroke-dasharray:9 12;animation:scan 5s linear infinite}.sense{animation:breathe 2.8s ease-in-out infinite}.snake-static{display:none}@keyframes apple{50%{transform:translateY(-4px) scale(1.06)}}@keyframes scan{to{stroke-dashoffset:-126}}@keyframes breathe{50%{opacity:.68}}@media(prefers-reduced-motion:reduce){.snake-motion,.apple{display:none}.snake-static{display:inline}.pond-scan,.sense{animation:none}}
     </style>
   </defs>
+
   <rect width="960" height="360" rx="18" fill="url(#sky)"/>
-  <path d="M0 168 C105 112 189 136 286 102 C392 64 447 122 536 100 C650 72 745 98 960 46 V360 H0Z" fill="url(#hill)" opacity=".76"/>
-  <g aria-hidden="true">
-    <path class="terrain-line" d="M-20 245 L977 81M-12 282 L980 120M-6 319 L979 158M0 356 L968 196M73 360 L225 126M190 360 L321 107M306 360 L419 100M423 360 L519 99M540 360 L620 89M657 360 L724 80M774 360 L830 70M891 360 L935 56"/>
-    <path class="contour" d="M72 222 C158 178 245 193 306 156 C380 110 453 141 528 128 C629 110 695 136 847 84M39 276 C143 231 224 249 325 209 C414 174 474 211 565 188 C652 166 751 192 912 133M6 329 C127 288 234 305 348 263 C442 227 519 260 625 239 C729 219 814 242 964 185"/>
+  <rect width="960" height="360" rx="18" fill="url(#nightLight)"/>
+
+  <g fill="#dbe8ee" aria-hidden="true">
+    <circle cx="64" cy="55" r="1.1" opacity=".62"/><circle cx="119" cy="92" r=".8" opacity=".42"/><circle cx="182" cy="44" r="1.5" opacity=".68"/><circle cx="242" cy="68" r=".7" opacity=".5"/><circle cx="319" cy="34" r="1" opacity=".48"/><circle cx="370" cy="77" r="1.2" opacity=".66"/><circle cx="439" cy="46" r=".75" opacity=".43"/><circle cx="511" cy="72" r="1.4" opacity=".58"/><circle cx="583" cy="39" r=".8" opacity=".5"/><circle cx="651" cy="69" r="1.1" opacity=".54"/><circle cx="706" cy="31" r="1.6" opacity=".8"/><circle cx="771" cy="71" r=".7" opacity=".52"/><circle cx="839" cy="38" r="1.2" opacity=".7"/><circle cx="906" cy="84" r=".9" opacity=".5"/>
+    <g filter="url(#starGlow)" opacity=".32"><circle cx="182" cy="44" r="3.2"/><circle cx="706" cy="31" r="3.5"/><circle cx="839" cy="38" r="2.8"/></g>
   </g>
-  <g aria-hidden="true" fill="#183342" stroke="#4f8d9a" stroke-width="1.5"><ellipse cx="263" cy="183" rx="43" ry="15"/><ellipse cx="703" cy="258" rx="50" ry="17"/><ellipse cx="844" cy="153" rx="31" ry="11"/></g>
-  <g fill="#e56463" stroke="#ffd6bc" stroke-width="1.25" aria-hidden="true"><g class="apple"><circle cx="418" cy="202" r="7"/><path d="M419 195 C422 188 427 190 428 187" fill="none"/></g><g class="apple two"><circle cx="583" cy="242" r="7"/><path d="M584 235 C587 228 592 230 593 227" fill="none"/></g><g class="apple three"><circle cx="772" cy="133" r="7"/><path d="M773 126 C776 119 781 121 782 118" fill="none"/></g></g>
-  <use href="#route" xlink:href="#route" class="scan" stroke="#8cdbc0" stroke-opacity=".35" stroke-width="2"/>
-  <g aria-hidden="true"><circle r="10" fill="#4f977f" opacity=".34"><animateMotion dur="10s" repeatCount="indefinite" begin="-1.4s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="10.5" fill="#58aa8c" opacity=".42"><animateMotion dur="10s" repeatCount="indefinite" begin="-1.15s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="11" fill="#65bb97" opacity=".50"><animateMotion dur="10s" repeatCount="indefinite" begin="-.9s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="11.5" fill="#72cba3" opacity=".62"><animateMotion dur="10s" repeatCount="indefinite" begin="-.65s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="12" fill="#86dbb2" opacity=".76"><animateMotion dur="10s" repeatCount="indefinite" begin="-.4s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle></g>
-  <g class="pulse" aria-hidden="true"><circle r="66" fill="url(#field)"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="50" fill="none" stroke="#74e0b1" stroke-opacity=".5" stroke-width="1.25" stroke-dasharray="4 7"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle></g>
-  <g filter="url(#softGlow)" aria-hidden="true"><circle r="14" fill="#96e9bd" stroke="#e2fff0" stroke-width="1.6"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="3" cx="5" cy="-4" fill="#142a29"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><path d="M13 0 L22 -3 L14 5Z" fill="#e2fff0"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></path></g>
-  <rect x="1" y="1" width="958" height="358" rx="17" fill="none" stroke="#8eaaa8" stroke-opacity=".34"/>
+
+  <path d="M0 263 C52 236 93 232 135 246 C184 262 214 257 256 237 C305 213 337 215 386 230 C428 243 475 225 514 207 C568 181 616 181 670 201 C731 224 779 218 826 222 C872 227 915 244 960 251 V360 H0Z" fill="#293d36" opacity=".88"/>
+  <use href="#hillShape" xlink:href="#hillShape" fill="url(#hill)"/>
+
+  <g clip-path="url(#hillClip)" aria-hidden="true">
+    <path d="M91 231 L126 181 L171 136 L219 108 L270 96 L238 145 L183 180 L142 228 L103 270Z" fill="#9bb37a" opacity=".54"/>
+    <path d="M270 96 L315 109 L386 171 L432 187 L394 219 L344 184 L307 139Z" fill="#435e46" opacity=".64"/>
+    <path d="M477 173 L566 116 L610 107 L575 154 L525 190 L481 224 L432 239Z" fill="#819b66" opacity=".5"/>
+    <path d="M610 107 L653 122 L732 166 L780 177 L740 219 L687 198 L652 161Z" fill="#425b46" opacity=".66"/>
+    <path d="M65 286 C182 252 238 220 348 226 C459 233 539 191 651 190 C760 189 841 233 947 279" fill="none" stroke="#b2c48e" stroke-opacity=".23" stroke-width="1.4"/>
+    <path d="M44 319 C158 283 267 263 368 272 C480 282 592 228 704 233 C801 237 875 273 956 304" fill="none" stroke="#20392f" stroke-opacity=".42" stroke-width="1.5"/>
+  </g>
+
+  <g aria-hidden="true">
+    <path d="M335 181 L354 132 L367 116 L378 177Z" fill="#77877d"/><path d="M354 132 L367 116 L364 174 L348 191Z" fill="#aab3a8"/><path d="M704 166 L728 112 L746 147 L758 178Z" fill="#6f8178"/><path d="M728 112 L746 147 L733 176 L717 177Z" fill="#a6b0a4"/><path d="M791 183 L815 151 L831 199Z" fill="#73857a"/><path d="M815 151 L831 199 L810 192Z" fill="#a7b2a7"/>
+  </g>
+
+  <g filter="url(#objectGlow)" aria-hidden="true">
+    <g transform="translate(303 250)"><ellipse rx="49" ry="15" fill="url(#pond)"/><ellipse class="pond-scan" rx="38" ry="10" fill="none" stroke="#d8fbff" stroke-width="1.5"/><path d="M-22 -3 C-10 -8 7 -8 22 -3" fill="none" stroke="#e6fdff" stroke-opacity=".85" stroke-width="1.3"/></g>
+    <g transform="translate(735 258)"><ellipse rx="42" ry="13" fill="url(#pond)"/><ellipse class="pond-scan" rx="32" ry="8" fill="none" stroke="#d8fbff" stroke-width="1.4"/><path d="M-18 -3 C-7 -7 8 -7 19 -2" fill="none" stroke="#e6fdff" stroke-opacity=".85" stroke-width="1.2"/></g>
+  </g>
+
+  <g fill="#ff635f" stroke="#ffe1cb" stroke-width="1.3" filter="url(#objectGlow)" aria-hidden="true">
+    <g class="apple" transform="translate(444 196)"><circle r="7"/><path d="M1 -7 C3 -13 8 -11 10 -15" fill="none"/><path d="M8 -13 L13 -12 L9 -9Z" fill="#9cff91" stroke="none"/></g>
+    <g class="apple two" transform="translate(641 153)"><circle r="7"/><path d="M1 -7 C3 -13 8 -11 10 -15" fill="none"/><path d="M8 -13 L13 -12 L9 -9Z" fill="#9cff91" stroke="none"/></g>
+    <g class="apple three" transform="translate(862 198)"><circle r="7"/><path d="M1 -7 C3 -13 8 -11 10 -15" fill="none"/><path d="M8 -13 L13 -12 L9 -9Z" fill="#9cff91" stroke="none"/></g>
+  </g>
+
+  <g clip-path="url(#hillClip)" aria-hidden="true">
+    <g class="snake-motion">
+      <g>
+        <circle class="sense" r="55" fill="url(#senseField)"/>
+        <circle class="sense" r="43" fill="none" stroke="#bfff9c" stroke-opacity=".62" stroke-width="1.2" stroke-dasharray="3 7"/>
+        <g fill="url(#snake)" stroke="#efffce" stroke-width="1.2" filter="url(#objectGlow)">
+          <circle cx="-69" r="6.5" opacity=".64"/><circle cx="-57" r="7.5" opacity=".73"/><circle cx="-44" r="8.5" opacity=".82"/><circle cx="-30" r="9.5" opacity=".9"/><circle cx="-15" r="10.5"/><ellipse rx="14" ry="12"/>
+          <path d="M12 -5 L23 0 L12 6Z" fill="#efffce" stroke="none"/>
+        </g>
+        <circle cx="6" cy="-4" r="2.2" fill="#17251f"/>
+        <animateMotion dur="14s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion>
+      </g>
+    </g>
+    <g class="snake-static" transform="translate(210 232) rotate(-18)">
+      <circle r="55" fill="url(#senseField)"/><circle r="43" fill="none" stroke="#bfff9c" stroke-opacity=".62" stroke-width="1.2" stroke-dasharray="3 7"/>
+      <g fill="url(#snake)" stroke="#efffce" stroke-width="1.2"><circle cx="-69" r="6.5" opacity=".64"/><circle cx="-57" r="7.5" opacity=".73"/><circle cx="-44" r="8.5" opacity=".82"/><circle cx="-30" r="9.5" opacity=".9"/><circle cx="-15" r="10.5"/><ellipse rx="14" ry="12"/><path d="M12 -5 L23 0 L12 6Z" fill="#efffce" stroke="none"/></g><circle cx="6" cy="-4" r="2.2" fill="#17251f"/>
+    </g>
+  </g>
+
+  <path d="M0 282 L47 272 L91 231" fill="none" stroke="#b6c894" stroke-opacity=".56" stroke-width="2"/>
+  <rect x="1" y="1" width="958" height="358" rx="17" fill="none" stroke="#a9bac1" stroke-opacity=".3"/>
 </svg>
