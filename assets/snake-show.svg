@@ -40,7 +40,7 @@
     </filter>
     <path id="hillShape" d="M0 282 L47 272 L91 231 L126 181 L171 136 L219 108 L270 96 L315 109 L353 137 L386 171 L432 187 L477 173 L523 143 L566 116 L610 107 L653 122 L692 151 L732 166 L780 177 L829 202 L884 244 L928 268 L960 275 V360 H0Z"/>
     <clipPath id="hillClip"><use href="#hillShape" xlink:href="#hillShape"/></clipPath>
-    <path id="route" d="M44 279 C79 281 92 251 126 239 C181 220 229 238 267 267 C302 294 341 291 381 260 C426 225 472 214 520 226 C573 239 617 222 653 190 C685 162 720 161 758 181 C801 204 829 224 873 211 C916 201 945 177 1008 169" fill="none"/>
+    <path id="route" d="M36 236 C59 228 73 240 89 254 C114 277 153 259 190 240 C224 223 244 245 267 267 C302 294 341 291 381 260 C426 225 472 214 520 226 C573 239 617 222 653 190 C685 162 720 161 758 181 C796 201 823 213 849 226 C881 244 915 265 950 275" fill="none"/>
     <style>
       .pond-scan{stroke-dasharray:9 12;animation:scan 5s linear infinite}.sense{animation:breathe 2.8s ease-in-out infinite}.snake-static{display:none}@keyframes scan{to{stroke-dashoffset:-126}}@keyframes breathe{50%{opacity:.68}}@media(prefers-reduced-motion:reduce){.snake-motion{display:none}.snake-static{display:inline}.pond-scan,.sense{animation:none}}
     </style>
@@ -112,6 +112,13 @@
       <circle r="55" fill="url(#senseField)"/><circle r="43" fill="none" stroke="#bfff9c" stroke-opacity=".62" stroke-width="1.2" stroke-dasharray="3 7"/>
       <g fill="url(#snake)" stroke="#efffce" stroke-width="1.2"><circle cx="-69" r="6.5" opacity=".64"/><circle cx="-57" r="7.5" opacity=".73"/><circle cx="-44" r="8.5" opacity=".82"/><circle cx="-30" r="9.5" opacity=".9"/><circle cx="-15" r="10.5"/><ellipse rx="14" ry="12"/><path d="M12 -5 L23 0 L12 6Z" fill="#efffce" stroke="none"/></g><circle cx="6" cy="-4" r="2.2" fill="#17251f"/>
     </g>
+  </g>
+
+  <g clip-path="url(#hillClip)" aria-hidden="true">
+    <path d="M760 360 C780 315 792 255 808 222 C837 211 864 222 890 243 C915 262 938 269 960 272 V360Z" fill="#405945"/>
+    <path d="M784 342 C795 292 801 246 808 222 C836 215 855 226 874 242 L842 294Z" fill="#55704f" opacity=".72"/>
+    <path d="M808 222 C837 211 864 222 890 243 C915 262 938 269 960 272" fill="none" stroke="#7f9867" stroke-opacity=".58" stroke-width="1.8"/>
+    <path d="M860 269 l-3 -10 m4 9 l5 -12 m-1 13 l8 -8 M920 285 l-2 -8 m3 8 l5 -10 m-1 11 l7 -7" fill="none" stroke="#9fbd72" stroke-width="2" stroke-linecap="round" opacity=".7"/>
   </g>
 
   <path d="M0 282 L47 272 L91 231" fill="none" stroke="#b6c894" stroke-opacity=".56" stroke-width="2"/>
