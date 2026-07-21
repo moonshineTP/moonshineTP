@@ -45,7 +45,7 @@
     </filter>
     <path id="hillShape" d="M0 282 L47 272 L91 231 L126 181 L171 136 L219 108 L270 96 L315 109 L353 137 L386 171 L432 187 L477 173 L523 143 L566 116 L610 107 L653 122 L692 151 L732 166 L780 177 L829 202 L884 244 L928 268 L960 275 V360 H0Z"/>
     <clipPath id="hillClip"><use href="#hillShape" xlink:href="#hillShape"/></clipPath>
-    <path id="route" d="M36 236 C59 228 73 240 89 254 C114 277 153 259 190 240 C224 223 244 245 267 267 C302 294 341 291 381 260 C426 225 472 214 520 226 C573 239 617 222 653 190 C685 162 720 161 758 181 C796 201 823 213 849 226 C881 244 915 265 950 275" fill="none"/>
+    <path id="route" d="M34 226 C58 216 72 234 92 252 S222 250 278 282 S390 270 445 240 S575 222 640 185 S728 166 760 188 S790 205 804 212 S908 268 950 275" fill="none"/>
     <style>
       .pond-scan{stroke-dasharray:9 12;animation:scan 5s linear infinite}.pond-flow{stroke-dasharray:3 8;animation:flow 7s linear infinite}.sense{animation:breathe 2.8s ease-in-out infinite}.snake-static{display:none}@keyframes scan{to{stroke-dashoffset:-126}}@keyframes flow{to{stroke-dashoffset:110}}@keyframes breathe{50%{opacity:.68}}@media(prefers-reduced-motion:reduce){.snake-motion{display:none}.snake-static{display:inline}.pond-scan,.pond-flow,.sense{animation:none}}
     </style>
@@ -90,7 +90,7 @@
   </g>
 
   <g filter="url(#objectGlow)" aria-hidden="true">
-    <g transform="translate(303 250)">
+    <g transform="translate(303 236)">
       <path d="M-52 2 C-47 -11 -29 -17 -12 -13 C2 -18 27 -15 43 -7 C57 0 49 11 33 15 C17 19 4 14 -11 16 C-30 18 -48 13 -52 2Z" fill="url(#pond)" stroke="#7feeff" stroke-width="1.2"/>
       <path class="pond-scan" d="M-39 1 C-33 -8 -21 -11 -8 -9 C6 -13 24 -10 34 -5 C42 0 35 7 24 9 C10 12 -1 8 -13 10 C-25 11 -37 8 -39 1Z" fill="none" stroke="#ddfbff" stroke-width="1.4"/>
       <path d="M-24 -4 C-12 -9 5 -9 20 -5" fill="none" stroke="#f0feff" stroke-opacity=".9" stroke-width="1.3"/>
@@ -103,27 +103,37 @@
   </g>
 
   <g fill="#ff635f" stroke="#ffe1cb" stroke-width="1.3" filter="url(#objectGlow)" aria-hidden="true">
-    <g class="apple" transform="translate(444 196)"><circle r="7"/><path d="M1 -7 C3 -13 8 -11 10 -15" fill="none"/><path d="M8 -13 L13 -12 L9 -9Z" fill="#9cff91" stroke="none"/></g>
-    <g class="apple two" transform="translate(641 153)"><circle r="7"/><path d="M1 -7 C3 -13 8 -11 10 -15" fill="none"/><path d="M8 -13 L13 -12 L9 -9Z" fill="#9cff91" stroke="none"/></g>
-    <g class="apple three" transform="translate(862 198)"><circle r="7"/><path d="M1 -7 C3 -13 8 -11 10 -15" fill="none"/><path d="M8 -13 L13 -12 L9 -9Z" fill="#9cff91" stroke="none"/></g>
+    <g class="apple" transform="translate(445 240)"><circle r="7"/><path d="M1 -7 C3 -13 8 -11 10 -15" fill="none"/><path d="M8 -13 L13 -12 L9 -9Z" fill="#9cff91" stroke="none"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;.437;.467;.99;1" dur="16s" repeatCount="indefinite"/></g>
+    <g class="apple two" transform="translate(640 185)" opacity="0"><circle r="7"/><path d="M1 -7 C3 -13 8 -11 10 -15" fill="none"/><path d="M8 -13 L13 -12 L9 -9Z" fill="#9cff91" stroke="none"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.457;.487;.644;.674;1" dur="16s" repeatCount="indefinite"/></g>
+    <g class="apple three" transform="translate(804 212)" opacity="0"><circle r="7"/><path d="M1 -7 C3 -13 8 -11 10 -15" fill="none"/><path d="M8 -13 L13 -12 L9 -9Z" fill="#9cff91" stroke="none"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.664;.694;.828;.858;1" dur="16s" repeatCount="indefinite"/></g>
   </g>
 
-  <g clip-path="url(#hillClip)" aria-hidden="true">
+  <g aria-hidden="true">
     <g class="snake-motion">
-      <g>
+      <g fill="url(#snake)" stroke="#efffce" stroke-width="1.2">
+        <circle r="10.5" opacity="0"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;.069;.089;1" dur="16s" repeatCount="indefinite"/><animateMotion dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;.984" keyTimes="0;.016;1"><mpath href="#route" xlink:href="#route"/></animateMotion></circle>
+        <circle r="9.5" opacity="0"><animate attributeName="opacity" values="0;0;.92;.92" keyTimes="0;.083;.103;1" dur="16s" repeatCount="indefinite"/><animateMotion dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;.970" keyTimes="0;.030;1"><mpath href="#route" xlink:href="#route"/></animateMotion></circle>
+        <circle r="8.5" opacity="0"><animate attributeName="opacity" values="0;0;.84;.84" keyTimes="0;.097;.117;1" dur="16s" repeatCount="indefinite"/><animateMotion dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;.956" keyTimes="0;.044;1"><mpath href="#route" xlink:href="#route"/></animateMotion></circle>
+        <circle r="7.5" opacity="0"><animate attributeName="opacity" values="0;0;.76;.76" keyTimes="0;.111;.131;1" dur="16s" repeatCount="indefinite"/><animateMotion dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;.942" keyTimes="0;.058;1"><mpath href="#route" xlink:href="#route"/></animateMotion></circle>
+        <circle r="6.5" opacity="0"><animate attributeName="opacity" values="0;0;.68;.68" keyTimes="0;.125;.145;1" dur="16s" repeatCount="indefinite"/><animateMotion dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;.928" keyTimes="0;.072;1"><mpath href="#route" xlink:href="#route"/></animateMotion></circle>
+        <circle r="5.9" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.447;.479;.99;1" dur="16s" repeatCount="indefinite"/><animateMotion dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;.914" keyTimes="0;.086;1"><mpath href="#route" xlink:href="#route"/></animateMotion></circle>
+        <circle r="5.3" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.654;.686;.99;1" dur="16s" repeatCount="indefinite"/><animateMotion dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;.900" keyTimes="0;.100;1"><mpath href="#route" xlink:href="#route"/></animateMotion></circle>
+        <circle r="4.7" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.838;.87;.99;1" dur="16s" repeatCount="indefinite"/><animateMotion dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;.886" keyTimes="0;.114;1"><mpath href="#route" xlink:href="#route"/></animateMotion></circle>
+      </g>
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;.053;.073;1" dur="16s" repeatCount="indefinite"/>
         <circle class="sense" r="55" fill="url(#senseField)"/>
         <circle class="sense" r="43" fill="none" stroke="#bfff9c" stroke-opacity=".62" stroke-width="1.2" stroke-dasharray="3 7"/>
         <g fill="url(#snake)" stroke="#efffce" stroke-width="1.2" filter="url(#objectGlow)">
-          <circle cx="-69" r="6.5" opacity=".64"/><circle cx="-57" r="7.5" opacity=".73"/><circle cx="-44" r="8.5" opacity=".82"/><circle cx="-30" r="9.5" opacity=".9"/><circle cx="-15" r="10.5"/><ellipse rx="14" ry="12"/>
-          <path d="M12 -5 L23 0 L12 6Z" fill="#efffce" stroke="none"/>
+          <ellipse rx="14" ry="12"/><path d="M12 -5 L23 0 L12 6Z" fill="#efffce" stroke="none"/>
         </g>
         <circle cx="6" cy="-4" r="2.2" fill="#17251f"/>
-        <animateMotion dur="14s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion>
+        <animateMotion dur="16s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion>
       </g>
     </g>
     <g class="snake-static" transform="translate(210 232) rotate(-18)">
       <circle r="55" fill="url(#senseField)"/><circle r="43" fill="none" stroke="#bfff9c" stroke-opacity=".62" stroke-width="1.2" stroke-dasharray="3 7"/>
-      <g fill="url(#snake)" stroke="#efffce" stroke-width="1.2"><circle cx="-69" r="6.5" opacity=".64"/><circle cx="-57" r="7.5" opacity=".73"/><circle cx="-44" r="8.5" opacity=".82"/><circle cx="-30" r="9.5" opacity=".9"/><circle cx="-15" r="10.5"/><ellipse rx="14" ry="12"/><path d="M12 -5 L23 0 L12 6Z" fill="#efffce" stroke="none"/></g><circle cx="6" cy="-4" r="2.2" fill="#17251f"/>
+      <g fill="url(#snake)" stroke="#efffce" stroke-width="1.2"><circle cx="-111" r="4.7" opacity=".56"/><circle cx="-98" r="5.3" opacity=".6"/><circle cx="-85" r="5.9" opacity=".64"/><circle cx="-71" r="6.5" opacity=".68"/><circle cx="-57" r="7.5" opacity=".76"/><circle cx="-43" r="8.5" opacity=".84"/><circle cx="-29" r="9.5" opacity=".92"/><circle cx="-15" r="10.5"/><ellipse rx="14" ry="12"/><path d="M12 -5 L23 0 L12 6Z" fill="#efffce" stroke="none"/></g><circle cx="6" cy="-4" r="2.2" fill="#17251f"/>
     </g>
   </g>
 
