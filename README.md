@@ -1,6 +1,5 @@
 ---
 <h1 align="center"><i>Blessful enough</i></h1>
----
 
 <img src="./assets/snake-show.svg" width="100%" alt="An animated snake agent explores a mapped hill." />
 
