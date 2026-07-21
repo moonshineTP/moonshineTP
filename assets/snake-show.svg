@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 360" role="img" aria-labelledby="title description">
+  <title id="title">A snake agent crosses a mapped hill</title>
+  <desc id="description">An animated snake explores a wireframe terrain, avoiding ponds and moving toward apples.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101826"/><stop offset="1" stop-color="#172132"/></linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#203b45"/><stop offset="1" stop-color="#13242e"/></linearGradient>
+    <radialGradient id="field"><stop offset="0" stop-color="#74e0b1" stop-opacity=".16"/><stop offset=".66" stop-color="#74e0b1" stop-opacity=".045"/><stop offset="1" stop-color="#74e0b1" stop-opacity="0"/></radialGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <path id="route" d="M132 246 C232 281 284 225 386 211 S548 277 660 208 S741 130 820 118" fill="none"/>
+    <style>
+      .terrain-line{fill:none;stroke:#56717a;stroke-opacity:.43;stroke-width:1}.contour{fill:none;stroke:#6a8d8b;stroke-opacity:.36;stroke-width:1.25}.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.5s ease-in-out infinite}.scan{stroke-dasharray:12 15;animation:scan 7s linear infinite}.apple{transform-box:fill-box;transform-origin:center;animation:apple 2.2s ease-in-out infinite}.apple.two{animation-delay:-.7s}.apple.three{animation-delay:-1.4s}@keyframes scan{to{stroke-dashoffset:-216}}@keyframes pulse{50%{opacity:.56;transform:scale(1.07)}}@keyframes apple{50%{transform:translateY(-5px) scale(1.07)}}@media (prefers-reduced-motion:reduce){.pulse,.scan,.apple{animation:none}}
+    </style>
+  </defs>
+  <rect width="960" height="360" rx="18" fill="url(#sky)"/>
+  <path d="M0 168 C105 112 189 136 286 102 C392 64 447 122 536 100 C650 72 745 98 960 46 V360 H0Z" fill="url(#hill)" opacity=".76"/>
+  <g aria-hidden="true">
+    <path class="terrain-line" d="M-20 245 L977 81M-12 282 L980 120M-6 319 L979 158M0 356 L968 196M73 360 L225 126M190 360 L321 107M306 360 L419 100M423 360 L519 99M540 360 L620 89M657 360 L724 80M774 360 L830 70M891 360 L935 56"/>
+    <path class="contour" d="M72 222 C158 178 245 193 306 156 C380 110 453 141 528 128 C629 110 695 136 847 84M39 276 C143 231 224 249 325 209 C414 174 474 211 565 188 C652 166 751 192 912 133M6 329 C127 288 234 305 348 263 C442 227 519 260 625 239 C729 219 814 242 964 185"/>
+  </g>
+  <g aria-hidden="true" fill="#183342" stroke="#4f8d9a" stroke-width="1.5"><ellipse cx="263" cy="183" rx="43" ry="15"/><ellipse cx="703" cy="258" rx="50" ry="17"/><ellipse cx="844" cy="153" rx="31" ry="11"/></g>
+  <g fill="#e56463" stroke="#ffd6bc" stroke-width="1.25" aria-hidden="true"><g class="apple"><circle cx="418" cy="202" r="7"/><path d="M419 195 C422 188 427 190 428 187" fill="none"/></g><g class="apple two"><circle cx="583" cy="242" r="7"/><path d="M584 235 C587 228 592 230 593 227" fill="none"/></g><g class="apple three"><circle cx="772" cy="133" r="7"/><path d="M773 126 C776 119 781 121 782 118" fill="none"/></g></g>
+  <use href="#route" xlink:href="#route" class="scan" stroke="#8cdbc0" stroke-opacity=".35" stroke-width="2"/>
+  <g aria-hidden="true"><circle r="10" fill="#4f977f" opacity=".34"><animateMotion dur="10s" repeatCount="indefinite" begin="-1.4s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="10.5" fill="#58aa8c" opacity=".42"><animateMotion dur="10s" repeatCount="indefinite" begin="-1.15s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="11" fill="#65bb97" opacity=".50"><animateMotion dur="10s" repeatCount="indefinite" begin="-.9s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="11.5" fill="#72cba3" opacity=".62"><animateMotion dur="10s" repeatCount="indefinite" begin="-.65s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="12" fill="#86dbb2" opacity=".76"><animateMotion dur="10s" repeatCount="indefinite" begin="-.4s" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle></g>
+  <g class="pulse" aria-hidden="true"><circle r="66" fill="url(#field)"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="50" fill="none" stroke="#74e0b1" stroke-opacity=".5" stroke-width="1.25" stroke-dasharray="4 7"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle></g>
+  <g filter="url(#softGlow)" aria-hidden="true"><circle r="14" fill="#96e9bd" stroke="#e2fff0" stroke-width="1.6"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><circle r="3" cx="5" cy="-4" fill="#142a29"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></circle><path d="M13 0 L22 -3 L14 5Z" fill="#e2fff0"><animateMotion dur="10s" repeatCount="indefinite" rotate="auto"><mpath href="#route" xlink:href="#route"/></animateMotion></path></g>
+  <rect x="1" y="1" width="958" height="358" rx="17" fill="none" stroke="#8eaaa8" stroke-opacity=".34"/>
+</svg>

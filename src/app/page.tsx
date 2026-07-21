@@ -1,13 +1,18 @@
+import { SearchForm } from "@/components/search/SearchForm";
+
 export default function Home() {
   return (
     <main className="mx-auto flex min-h-full w-full max-w-6xl flex-col px-6 py-8 sm:px-10 lg:px-16">
-      <header className="flex items-center justify-between border-b border-black/10 pb-6 text-sm dark:border-white/15">
+      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-black/10 pb-6 text-sm dark:border-white/15">
         <span className="font-semibold tracking-tight">FIELD NOTES</span>
         <nav className="flex gap-5 text-zinc-600 dark:text-zinc-400">
           <a className="transition-colors hover:text-foreground" href="#notes">Notes</a>
           <a className="transition-colors hover:text-foreground" href="#projects">Projects</a>
           <a className="transition-colors hover:text-foreground" href="#about">About</a>
         </nav>
+        <div className="w-full sm:w-52">
+          <SearchForm />
+        </div>
       </header>
 
       <section className="grid flex-1 items-center gap-12 py-20 lg:grid-cols-[1.4fr_0.6fr]">

@@ -10,7 +10,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Read the relevant bundled Next.js guide in `node_modules/next/dist/docs/` before changing framework code.
 - Treat `/docs` as the human-agent co-authoring area. Put workflow notes, decisions, and prompts there.
 - Treat `/specs` as the agent-maintained interpretation of the product. The user is the supervisor and can accept, amend, or reject it.
-- Keep the public site focused on a technical portfolio with editable notes, reflective writing, and project evidence.
+- Keep the public site focused on a technical portfolio with editable notes, deep structured articles, reflective sayings, customizable interface, and a few personal projects. Avoid social media, marketing, or e-commerce content. 
 - Keep content separate from route and UI code. Prefer MDX content in `/content` when the content layer is introduced.
 
 ## Three.js
