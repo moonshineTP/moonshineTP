@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Field Notes",
-    template: "%s | Field Notes",
+    default: "moonshineTP",
+    template: "%s | moonshineTP",
   },
-  description: "A technical portfolio built as an evolving collection of field notes, projects, and reflections.",
+  description: "Field notes by moonshineTP.",
 };
 
 export default function RootLayout({

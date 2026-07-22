@@ -142,8 +142,16 @@ foreach ($directory in $referenceDirectories) {
         Get-ChildItem -LiteralPath $directory.FullName -File |
             Where-Object { $_.Extension -match '^\.(png|jpe?g|webp|avif)$' }
     )
-    if ($media.Count -gt 0 -and -not (Test-Path -LiteralPath (Join-Path $directory.FullName "SOURCES.md"))) {
+    $sourceRecordPath = Join-Path $directory.FullName "SOURCES.md"
+    if ($media.Count -gt 0 -and -not (Test-Path -LiteralPath $sourceRecordPath)) {
         $issues.Add("reference directory lacks SOURCES.md: $(Get-RelativePath $directory.FullName)")
+    } elseif ($media.Count -gt 0) {
+        $sourceRecordContent = Get-Content -Raw -Encoding UTF8 -LiteralPath $sourceRecordPath
+        foreach ($asset in $media) {
+            if (-not $sourceRecordContent.Contains("``$($asset.Name)``")) {
+                $issues.Add("source record omits asset: $(Get-RelativePath $asset.FullName)")
+            }
+        }
     }
 }
 
@@ -166,6 +174,9 @@ foreach ($block in $questionBlocks) {
         if ($block.Value -notmatch "(?m)^\*\*$field\*\*:") {
             $issues.Add("question $id lacks $field")
         }
+    }
+    if ($block.Value -match '(?m)^\*\*Status\*\*: Answered\..*\bremains open\b') {
+        $issues.Add("answered question retains open-work status: $id")
     }
 }
 
@@ -237,12 +248,52 @@ if (-not (Test-Path -LiteralPath $manifestPath)) {
             $issues.Add("manifest omits: $relativePath")
         }
     }
+
+    $manifestPaths = [System.Collections.Generic.HashSet[string]]::new()
+    foreach ($match in [regex]::Matches($manifest, '(?m)\| `(?<path>(?:docs|specs)/[^`]+\.md)` \|')) {
+        $relativePath = $match.Groups['path'].Value
+        if (-not $manifestPaths.Add($relativePath)) {
+            $issues.Add("duplicate manifest path: $relativePath")
+        }
+        $fullPath = Join-Path $repository $relativePath.Replace('/', '\')
+        if (-not (Test-Path -LiteralPath $fullPath -PathType Leaf)) {
+            $issues.Add("manifest references missing document: $relativePath")
+        }
+    }
 }
 
 $assetCount = @(
     Get-ChildItem -LiteralPath (Join-Path $repository "docs") -Recurse -File |
         Where-Object { $_.Extension -match '^\.(png|jpe?g|webp|avif)$' }
 ).Count
+
+if (Test-Path -LiteralPath $manifestPath) {
+    $countMatch = [regex]::Match(
+        $manifest,
+        'The manifest covers (?<markdown>\d+) Markdown documents and (?<assets>\d+) local binary reference assets'
+    )
+    if (-not $countMatch.Success) {
+        $issues.Add("manifest lacks current document and asset counts")
+    } else {
+        if ([int]$countMatch.Groups['markdown'].Value -ne $markdownFiles.Count) {
+            $issues.Add("manifest Markdown count is stale")
+        }
+        if ([int]$countMatch.Groups['assets'].Value -ne $assetCount) {
+            $issues.Add("manifest binary asset count is stale")
+        }
+    }
+}
+
+$versionIndexPath = Join-Path $repository "docs\backlog\release\version.md"
+$versionIndex = Get-Content -Raw -Encoding UTF8 -LiteralPath $versionIndexPath
+$packagePath = Join-Path $repository "package.json"
+$packageData = Get-Content -Raw -Encoding UTF8 -LiteralPath $packagePath | ConvertFrom-Json
+if (
+    $versionIndex -match '\| Stage status \| Staged \|' -and
+    $packageData.version -match '^0\.1\.'
+) {
+    $issues.Add("staged Beta 1 cannot advertise a 0.1.x package version")
+}
 $externalLinkCount = 0
 foreach ($file in $markdownFiles) {
     $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $file.FullName
