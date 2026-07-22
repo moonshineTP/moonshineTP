@@ -27,6 +27,19 @@
 # misc
 .DS_Store
 *.pem
+*.key
+*.p12
+*.pfx
+
+# local-only design references
+docs/**/sample/*
+!docs/**/sample/SOURCES.md
+docs/feature/dynamic-readme/assets/*
+!docs/feature/dynamic-readme/assets/SOURCES.md
+
+# local secrets
+/secrets/
+/.secrets/
 
 # debug
 npm-debug.log*
