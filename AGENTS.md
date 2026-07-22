@@ -9,9 +9,20 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Use Bun for package installation, scripts, and the lockfile. Do not introduce a second package manager.
 - Read the relevant bundled Next.js guide in `node_modules/next/dist/docs/` before changing framework code.
 - Treat `/docs` as the human-agent co-authoring area. Put workflow notes, decisions, and prompts there.
-- Treat `/specs` as the agent-maintained interpretation of the product. The user is the supervisor and can accept, amend, or reject it.
+- Treat `/specs` as the agent-maintained interpretation of the product. It never affects code development or application behavior. Record implementation-governing rules under `/docs`.
 - Keep the public site focused on a technical portfolio with editable notes, deep structured articles, reflective sayings, customizable interface, and a few personal projects. Avoid social media, marketing, or e-commerce content. 
 - Keep content separate from route and UI code. Prefer MDX content in `/content` when the content layer is introduced.
+
+## Documentation and RPI
+
+Read the [Documentation Index](docs/index.md), [Release Index](docs/backlog/release/version.md), [Backlog Guide](docs/backlog/README.md), [Documentation Manifest](docs/manifest.md), [0.1 RPI Workspace](specs/0.1/README.md), and [0.1 Readiness](specs/0.1/STATUS.md) before planning or changing product behavior.
+
+- `/docs` owns accepted product direction, release state, and implementation governance. `/specs` holds non-authoritative agent interpretation and RPI records.
+- Beta 1 is staged. Before an explicit supervisor launch, limit work to research, plans, notes, logs, documentation, and pre-launch evidence. Existing prototype diffs are inputs, not implementation progress.
+- Implementation requirements must be accepted under `/docs`. No specification, RPI plan, artifact, status, note, or log may authorize, block, scope, sequence, approve, or validate code work.
+- Keep decisions in `docs/general/decision.md`, permanent work in `docs/backlog/backlog.md`, release state in `docs/backlog/release/`, and RPI readiness in `specs/0.1/STATUS.md`.
+- A staged Beta 1 must not advertise a `0.1.x` package version.
+- After changing documentation or RPI records, update the manifest and affected live records. Run `powershell -ExecutionPolicy Bypass -File scripts/validate-docs.ps1` and `git diff --check`.
 
 ## Three.js
 
