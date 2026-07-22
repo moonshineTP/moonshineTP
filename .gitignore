@@ -31,11 +31,10 @@
 *.p12
 *.pfx
 
-# local-only design references
-docs/**/sample/*
-!docs/**/sample/SOURCES.md
-docs/feature/dynamic-readme/assets/*
-!docs/feature/dynamic-readme/assets/SOURCES.md
+# local-only project material
+/docs/
+/specs/
+/content/
 
 # local secrets
 /secrets/
